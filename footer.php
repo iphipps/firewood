@@ -1,11 +1,12 @@
-<?php 
+<?php
 /*
- * The footer template	
+ * The footer template
  *
- *
+ * @since 1.0
+ * @package firewood
+ * @subpackage Template
  */
 ?>
-
 	</div><!-- / .main -->
 
 	<?php do_atomic( 'before_footer' ); // firewood_before_footer ?>

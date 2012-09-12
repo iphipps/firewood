@@ -1,21 +1,22 @@
 <?php 
 /*
- * The header template	
+ * The 404 template
  *
- *
+ * @since 1.0
+ * @package firewood
+ * @subpackage Template
  */
-
 @header( 'HTTP/1.1 404 Not found', true, 404 );
 
 get_header(); // Loads the header.php template. ?>
 
-	<?php do_atomic( 'before_content' ); // atlantic_before_content ?>
+	<?php do_atomic( 'before_content' ); // firewood_before_content ?>
 
-	<div class="hfeed <?php atlantic_grid( 'content' ); ?>" role="main">
+	<div class="hfeed <?php firewood_grid( 'content' ); ?>" role="main">
 
-		<?php do_atomic( 'open_content' ); // atlantic_open_content ?>
+		<?php do_atomic( 'open_content' ); // firewood_open_content ?>
 
-			<article id="post-0" class="<?php atlantic_entry_class(); ?>">
+			<article id="post-0" class="<?php firewood_entry_class(); ?>">
 
 				<h1 class="error-404-title entry-title"><?php _e( 'Oh No! Not Found', hybrid_get_textdomain() ); ?></h1>
 
@@ -27,10 +28,10 @@ get_header(); // Loads the header.php template. ?>
 				
 			</article><!-- / article -->
 
-		<?php do_atomic( 'close_content' ); // atlantic_close_content ?>
+		<?php do_atomic( 'close_content' ); // firewood_close_content ?>
 
 	</div><!-- / .content -->
 
-	<?php do_atomic( 'after_content' ); // atlantic_after_content ?>
+	<?php do_atomic( 'after_content' ); // firewood_after_content ?>
 
 <?php get_footer(); // Loads the footer.php template. ?>

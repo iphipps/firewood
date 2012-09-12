@@ -1,4 +1,11 @@
-<?php // Loop Info Template ?>
+<?php
+/*
+ * The loop info template part
+ * @since 1.0
+ * @package firewood
+ * @subpackage Part
+ */
+?>
 
 	<?php if ( is_home() && !is_front_page() ) : ?>
 

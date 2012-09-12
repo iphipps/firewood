@@ -1,4 +1,12 @@
-<?php // Loop Nav Template ?>
+<?php
+/*
+ * The loop navigation template part
+ *
+ * @since 1.0
+ * @package firewood
+ * @subpackage Part
+ */
+?>
 
 	<?php if ( is_attachment() ) : ?>
 

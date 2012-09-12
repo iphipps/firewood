@@ -10,11 +10,11 @@
  * You should have received a copy of the GNU General Public License along with this program; if not, write 
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
- * @package ATLANTIC
- * @version 1.60
- * @author Matthew Kelley <matt@matthewkelley.net>
- * @copyright Copyright (c) 2011, Matthew Kelley
- * @link http://matthewkelley.net
+ * @package firewood
+ * @version 1.0
+ * @author Hunt & Gather <dev@huntandgather.com>
+ * @copyright Copyright (c) 2012, Hunt & Gather
+ * @link http://huntandgather.com
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -23,14 +23,14 @@
 require_once( trailingslashit( TEMPLATEPATH ) . 'library/hybrid.php' );
 $theme = new Hybrid();
 
-add_action( 'after_setup_theme', 'atlantic_theme_setup' );
+add_action( 'after_setup_theme', 'firewood_theme_setup' );
 
 /**
  * Theme setup function.
  *
  * @since 1.0
  */
-function atlantic_theme_setup() {
+function firewood_theme_setup() {
 
 	/* Get action/filter hook prefix. */
 	$prefix = hybrid_get_prefix();
@@ -49,80 +49,79 @@ function atlantic_theme_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/* Atlantic Functions */
-	add_action( 'after_setup_theme', 'atlantic_grid_strings' );
-	add_action( 'after_setup_theme', 'atlantic_grid' );
-	add_action( 'after_setup_theme', 'atlantic_body_class' );
-	add_action( 'after_setup_theme', 'atlantic_entry_class' );
+	add_action( 'after_setup_theme', 'firewood_grid_strings' );
+	add_action( 'after_setup_theme', 'firewood_grid' );
+	add_action( 'after_setup_theme', 'firewood_body_class' );
+	add_action( 'after_setup_theme', 'firewood_entry_class' );
 	
 	/* Header actions. */
 	add_action( "{$prefix}_branding", 'hybrid_site_title' );
 	add_action( "{$prefix}_branding", 'hybrid_site_description' );
 
 	/* Add the loop info template. */	
-	add_action( "{$prefix}_open_content", 'atlantic_loop_info' );
+	add_action( "{$prefix}_open_content", 'firewood_loop_info' );
 
 	/* Add the navigation links. */
-	add_action( "{$prefix}_close_content", 'atlantic_loop_nav' );
+	add_action( "{$prefix}_close_content", 'firewood_loop_nav' );
 
 	/* Add the comment avatar and comment meta before individual comments. */
 	add_action( "{$prefix}_before_comment", 'hybrid_avatar' );
-	add_action( "{$prefix}_before_comment", 'atlantic_comment_meta' );
+	add_action( "{$prefix}_before_comment", 'firewood_comment_meta' );
 
 	/* Add the footer insert to the footer. */
-	add_action( "{$prefix}_footer", 'atlantic_footer_insert' );
+	add_action( "{$prefix}_footer", 'firewood_footer_insert' );
 
 	/* Add functions and plugins, deregister jQuery on the frontend */
-	add_action( 'wp_enqueue_scripts', 'atlantic_scripts' );
+	add_action( 'wp_enqueue_scripts', 'firewood_scripts' );
 		
 	/* Add HTML5 site title and description */	
-	add_filter( "{$prefix}_site_title", 'atlantic_filter_site_title' );
-	add_filter( "{$prefix}_site_description", 'atlantic_filter_site_description' );
+	add_filter( "{$prefix}_site_title", 'firewood_filter_site_title' );
+	add_filter( "{$prefix}_site_description", 'firewood_filter_site_description' );
 	
 	/* Add the title, byline, and entry meta before and after the entry. */
-	add_action( "{$prefix}_open_entry", 'atlantic_entry_header' );
-	add_action( "{$prefix}_close_entry", 'atlantic_entry_meta' );
+	add_action( "{$prefix}_open_entry", 'firewood_entry_header' );
+	add_action( "{$prefix}_close_entry", 'firewood_entry_meta' );
 	
 }
 
 /**
  * Create default layout values for atlantic grid
  *
- * @since 1.1
+ * @since 1.0
  * @updated 1.60
  */
-function atlantic_grid_strings() {
+function firewood_grid_strings() {
 
 	$defaults = array();
 
-	return apply_filters( 'atlantic_grid_strings', $defaults );
+	return apply_filters( 'firewood_grid_strings', $defaults );
 
 }
 
 /**
  * Controls layout by outputing css grid classes
  *
- * @since 1.1
+ * @since 1.0
  */
-function atlantic_grid( $context ) {
+function firewood_grid( $context ) {
 
 	/* Get an array of layout strings. */
-	$strings = atlantic_grid_strings();
+	$strings = firewood_grid_strings();
 
 	/*The ouput variable equals the context's string if it exists. Else, the output variable equals the context slug. */
 	isset( $strings[$context] ) ? $output = $strings[$context] : $output = $context;
 	
-	echo apply_atomic( 'atlantic_grid', $output );
+	echo apply_atomic( 'firewood_grid', $output );
 
 }
 
 /**
  * Provides classes for the <body> element depending on page context.
  *
- * @since 1.2
- * @updated 1.60
+ * @since 1.0
  * @credit derived from hybrid_body_class via hybrid core 1.2
  */
-function atlantic_body_class( $class = '' ) {
+function firewood_body_class( $class = '' ) {
 	global $wp_query;
 
 	$classes = hybrid_get_context();
@@ -175,10 +174,10 @@ function atlantic_body_class( $class = '' ) {
 /**
  * Provides classes for the post contianer based on context.
  *
- * @since 1.60
+ * @since 1.0
  * @credit Original script hybrid_entry_class via Hybrid Core 1.3.1
  */
-function atlantic_entry_class( $class = '', $post_id = null ) {
+function firewood_entry_class( $class = '', $post_id = null ) {
 	static $post_alt;
 
 	$post = get_post( $post_id );
@@ -221,9 +220,9 @@ function atlantic_entry_class( $class = '', $post_id = null ) {
 /**
  * Loads the loop-info.php template if the page isn't singular
  *
- * @since 1.60
+ * @since 1.0
  */
-function atlantic_loop_info() {
+function firewood_loop_info() {
 	
 	if ( !is_singular() )
 		get_template_part( 'loop', 'info' );
@@ -234,7 +233,7 @@ function atlantic_loop_info() {
  *
  * @since 1.0
  */
-function atlantic_loop_nav() {
+function firewood_loop_nav() {
 
 	get_template_part( 'loop', 'nav' );
 }
@@ -244,7 +243,7 @@ function atlantic_loop_nav() {
  *
  * @since 1.60
  */
-function atlantic_comment_meta() {
+function firewood_comment_meta() {
 
 	echo apply_atomic_shortcode( 'comment_meta', '<div class="comment-meta comment-meta-data">[comment-author] [comment-published] [comment-permalink before="| "] [comment-edit-link before="| "] [comment-reply-link before="| "]</div>' );
 }
@@ -254,7 +253,7 @@ function atlantic_comment_meta() {
  *
  * @since 1.0
  */
-function atlantic_footer_insert() {
+function firewood_footer_insert() {
 
 	$footer_insert = hybrid_get_setting( 'footer_insert' );
 
@@ -268,7 +267,7 @@ function atlantic_footer_insert() {
  * @since 1.0
  * @updated 1.60
  */
-function atlantic_scripts() {
+function firewood_scripts() {
 
 	wp_deregister_script('jquery');
 
@@ -278,9 +277,8 @@ function atlantic_scripts() {
  * Filter hybrid site title
  *
  * @since 1.0
- * @updated 1.60
  */
-function atlantic_filter_site_title() {
+function firewood_filter_site_title() {
 
 	if ( $title = get_bloginfo( 'name' ) )
 
@@ -293,10 +291,9 @@ function atlantic_filter_site_title() {
 /**
  * Filter hybrid site description
  *
- * @since 1.3
- * @updated 1.60
+ * @since 1.0
  */
-function atlantic_filter_site_description() {
+function firewood_filter_site_description() {
 
 	if ( $description = get_bloginfo( 'description' ) )
 
@@ -311,7 +308,7 @@ function atlantic_filter_site_description() {
  *
  * @since 1.0
  */
-function atlantic_entry_header() {
+function firewood_entry_header() {
 
 	$byline = '';
 
@@ -332,9 +329,8 @@ function atlantic_entry_header() {
  * Displays the default entry metadata.
  *
  * @since 1.0
- * @updated 1.60
  */
-function atlantic_entry_meta() {
+function firewood_entry_meta() {
 
 	$meta = '';
 
