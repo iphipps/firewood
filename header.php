@@ -1,8 +1,10 @@
-<?php 
+<?php
 /*
- * The header template	
+ * The header template
  *
- *
+ * @since 1.0
+ * @package firewood
+ * @subpackage Template
  */
 ?>
 
@@ -35,9 +37,9 @@
 
 	<?php do_atomic( 'before_header' ); // firewood_before_header ?>
 						
-	<?php do_atomic( 'open_header' ); // firewood_open_header ?>
-
 		<header class="banner" role="banner">
+	
+			<?php do_atomic( 'open_header' ); // firewood_open_header ?>
 
 			<hgroup class="branding">
 
@@ -45,11 +47,9 @@
 
 			</hgroup><!-- / .branding -->
 				
-			<?php do_atomic( 'header' ); // firewood_header ?>
+			<?php do_atomic( 'close_header' ); // firewood_close_header ?>
 
 		</header><!-- / .banner -->
-
-		<?php do_atomic( 'close_header' ); // firewood_close_header ?>
 
 		<?php do_atomic( 'before_main' ); // firewood_before_main ?>
 
