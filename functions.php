@@ -314,7 +314,7 @@ function firewood_entry_header() {
 
 	if ( 'post' == get_post_type() && 'link_category' !== get_query_var( 'taxonomy' ) )
 
-		$byline = '<p class="byline">' . __( 'By [entry-author] on [entry-published] [entry-edit-link before=" | "]', hybrid_get_textdomain() ) . '</p>';
+		$byline = '<p class="byline">' . __( 'By [entry-author] on [entry-published] [entry-edit-link before=" | "]', 'firewood' ) . '</p>';
 
 	echo '<header class="entry-header">';
 
@@ -336,7 +336,7 @@ function firewood_entry_meta() {
 
 	if ( 'post' == get_post_type() )
 
-		$meta = '<p>' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms taxonomy="post_tag" before="| Tagged "] [entry-comments-link before="| "]', hybrid_get_textdomain() ) . '</p>';
+		$meta = '<p>' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms taxonomy="post_tag" before="| Tagged "] [entry-comments-link before="| "]', 'firewood' ) . '</p>';
 
 	elseif ( is_page() && current_user_can( 'edit_page', get_the_ID() ) )
 

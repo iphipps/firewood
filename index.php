@@ -27,8 +27,8 @@ get_header(); // Loads the header.php template. ?>
 					<?php do_atomic( 'open_entry' ); // firewood_open_entry ?>
 
 						<div class="entry-content">
-							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', hybrid_get_textdomain() ) ); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
+							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'firewood' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'firewood' ), 'after' => '</p>' ) ); ?>
 						</div><!-- / .entry-content -->
 
 					<?php do_atomic( 'close_entry' ); // firewood_close_entry ?>

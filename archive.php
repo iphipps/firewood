@@ -29,7 +29,7 @@ get_header(); ?>
 
 						<div class="entry-content summary">
 							<?php the_excerpt(); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'firewood' ), 'after' => '</p>' ) ); ?>
 						</div><!-- / .entry-content -->
 
 						<?php do_atomic( 'close_entry' ); // firewood_close_entry ?>

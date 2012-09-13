@@ -11,7 +11,7 @@
 
 		<div class="entry-content">
 
-			<p><?php _e( 'No entries were found.', hybrid_get_textdomain() ); ?></p>
+			<p><?php _e( 'No entries were found.', 'firewood' ); ?></p>
 
 		</div><!-- .entry-content -->
 
