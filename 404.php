@@ -16,9 +16,9 @@ get_header(); // Loads the header.php template. ?>
 
 		<?php do_atomic( 'open_content' ); // firewood_open_content ?>
 
-			<div class="<?php firewood_entry_class(); ?>">
+			<article id="post-0" class="<?php firewood_entry_class(); ?>">
 
-				<h2 class="error-404-title entry-title"><?php _e( 'Oh No! Not Found', 'firewood' ); ?></h1>
+				<h1 class="error-404-title entry-title"><?php _e( 'Oh No! Not Found', 'firewood' ); ?></h1>
 
 				<div class="entry-content">
 
@@ -26,7 +26,7 @@ get_header(); // Loads the header.php template. ?>
 
 				</div><!-- / .entry-content -->
 				
-			</div><!-- / .404-error -->
+			</article><!-- / article -->
 
 		<?php do_atomic( 'close_content' ); // firewood_close_content ?>
 

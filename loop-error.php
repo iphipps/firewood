@@ -4,10 +4,10 @@
  *
  * @since 1.0
  * @package firewood
- * @subpackage Loop Part
+ * @subpackage Part
  */
 ?>
-	<div class="<?php firewood_entry_class(); ?>">
+	<article id="post-0" class="<?php firewood_entry_class(); ?>">
 
 		<div class="entry-content">
 
@@ -15,4 +15,4 @@
 
 		</div><!-- .entry-content -->
 
-	</div><!-- / .error -->
+	</div><!-- / article -->
