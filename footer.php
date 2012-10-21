@@ -11,7 +11,7 @@
 
 	<?php do_atomic( 'before_footer' ); // firewood_before_footer ?>
 
-		<footer class="contentinfo" role="contentinfo">
+		<div class="contentinfo" role="contentinfo">
 
 			<?php do_atomic( 'open_footer' ); // firewood_open_footer ?>
 
@@ -19,7 +19,7 @@
 
 			<?php do_atomic( 'close_footer' ); // firewood_close_footer ?>
 
-		</footer><!-- / .contentinfo -->
+		</div><!-- / .contentinfo -->
 
 	<?php do_atomic( 'after_footer' ); // firewood_after_footer ?>
 

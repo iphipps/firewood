@@ -10,7 +10,7 @@
 
 	<?php global $post, $comment;?>
 
-	<li id="comment-<?php comment_ID(); ?>" class="<?php firewood_comment_class(); ?>">
+	<li class="<?php firewood_comment_class(); ?>">
 
 		<?php do_atomic( 'before_comment' ); // firewood_before_comment ?>
 
@@ -20,7 +20,7 @@
 			<?php endif; ?>
 
 			<?php comment_text( $comment->comment_ID ); ?>
-		</div><!-- .comment-text -->
+		</div><!-- / .comment-text -->
 
 		<?php do_atomic( 'after_comment' ); // firewood_after_comment ?>
 

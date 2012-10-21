@@ -12,7 +12,7 @@ get_header(); // Loads the header.php template. ?>
 
 	<?php do_atomic( 'before_content' ); // firewood_before_content ?>
 
-	<div class="hfeed <?php firewood_grid( 'content' ); ?>" role="main">
+	<div class="hfeed content" role="main">
 
 		<?php do_atomic( 'open_content' ); // firewood_open_content ?>
 
@@ -22,7 +22,7 @@ get_header(); // Loads the header.php template. ?>
 
 				<?php do_atomic( 'before_entry' ); // firewood_before_entry ?>
 
-				<article id="post-<?php the_ID(); ?>" class="<?php firewood_entry_class(); ?>">
+				<div class="<?php firewood_entry_class(); ?>">
 
 					<?php do_atomic( 'open_entry' ); // firewood_open_entry ?>
 
@@ -33,7 +33,7 @@ get_header(); // Loads the header.php template. ?>
 
 					<?php do_atomic( 'close_entry' ); // firewood_close_entry ?>
 
-				</article><!-- / .hentry -->
+				</div><!-- / .hentry -->
 
 				<?php if ( is_singular() ) { ?>
 
@@ -59,4 +59,4 @@ get_header(); // Loads the header.php template. ?>
 
 	<?php do_atomic( 'after_content' ); // firewood_after_content ?>
 
-<?php get_footer(); // Loads the footer.php template. ?>
+	<?php get_footer(); // Loads the footer.php template. ?>

@@ -21,11 +21,9 @@
 			<?php next_post_link( '<div class="next">' . __( 'Next Entry: %link', 'firewood' ) . '</div>', '%title' ); ?>
 		</div><!-- / .loop-nav -->
 
-	<?php elseif ( !is_singular() && current_theme_supports( 'loop-pagination' ) ) :
+	<?php elseif ( !is_singular() && current_theme_supports( 'loop-pagination' ) ) : ?>
 		
-		$args =	array( 'before' => '<div class="loop-nav">', 'after' => '</div><!-- / .loop-nav -->');
-		loop_pagination( $args );
-	 	?>
-
+		<?php $pagination_args = array( 'before' => '<div class="loop-nav">', 'after' => '</div><!-- / .loop-nav -->'); ?>
+		<?php loop_pagination( $pagination_args ); ?>
 
 	<?php endif; ?>

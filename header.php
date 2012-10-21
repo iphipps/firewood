@@ -37,19 +37,19 @@
 
 	<?php do_atomic( 'before_header' ); // firewood_before_header ?>
 						
-		<header class="banner" role="banner">
+		<div class="banner" role="banner">
 	
 			<?php do_atomic( 'open_header' ); // firewood_open_header ?>
 
-			<hgroup class="branding">
+			<div class="branding">
 
 				<?php do_atomic( 'branding' ); // firewood_branding ?>
 
-			</hgroup><!-- / .branding -->
+			</div><!-- / .branding -->
 				
 			<?php do_atomic( 'close_header' ); // firewood_close_header ?>
 
-		</header><!-- / .banner -->
+		</div><!-- / .banner -->
 
 		<?php do_atomic( 'before_main' ); // firewood_before_main ?>
 
