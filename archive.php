@@ -21,7 +21,7 @@ get_header(); ?>
 
 					<?php do_atomic( 'before_entry' ); // firewood_before_entry ?>
 					
-					<article id="post-<?php the_ID(); ?>" class="<?php firewood_entry_class(); ?>">
+					<div class="<?php firewood_entry_class(); ?>">
 
 						<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
 
@@ -34,7 +34,7 @@ get_header(); ?>
 
 						<?php do_atomic( 'close_entry' ); // firewood_close_entry ?>
 
-					</article><!-- / .hentry -->
+					</div><!-- / .hentry -->
 
 					<?php do_atomic( 'after_entry' ); // firewood_after_entry ?>
 
@@ -52,4 +52,4 @@ get_header(); ?>
 
 	<?php do_atomic( 'after_content' ); // firewood_after_content ?>
 
-<?php get_footer(); // Loads the footer.php template. ?>
+	<?php get_footer(); // Loads the footer.php template. ?>

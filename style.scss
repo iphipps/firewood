@@ -1,0 +1,25 @@
+/**
+ * Theme Name: firewood
+ * Theme URI: http://dev.huntandgather.com/firewood
+ * Description: The Hunt & Gather WordPress theme boilerplate.
+ * Version: 1.1
+ * Author: Hunt & Gather
+ * Author URI: http://huntandgather.com
+ * Tags: theme-options, threaded-comments, translation-ready
+ * License: GNU General Public License v2.0
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Copyright (c) 2012 Hunt & Gather. All rights reserved.
+ *
+ */
+
+	// Import normalize
+	@import "scss/normalize";
+
+	// Import variables
+	@import "scss/variables";
+
+	// Import mixins
+	@import "scss/mixins";
+
+	// Import grid
+	@import "scss/grid";
