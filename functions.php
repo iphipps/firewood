@@ -54,10 +54,6 @@ function firewood_theme_setup() {
 	add_action( "{$prefix}_open_entry", 'firewood_entry_header' );
 	add_action( "{$prefix}_close_entry", 'firewood_entry_meta' );
 
-	/* Add the comment avatar and comment meta before individual comments */
-	add_action( "{$prefix}_before_comment", 'hybrid_avatar' );
-	add_action( "{$prefix}_before_comment", 'firewood_comment_meta' );
-
 	/* Deregister WordPress jQuery on the frontend */
 	add_action( 'wp_enqueue_scripts', 'firewood_remove_jquery' );
 
@@ -221,21 +217,6 @@ function firewood_entry_meta() {
 
 }
 
-/**
- * Function for displaying a comment's metadata.
- *
- * @since 1.0
- */
-function firewood_comment_meta() {
-
-	$comment_meta = __( '[comment-author] [comment-published] [comment-permalink before="| "] [comment-edit-link before="| "] [comment-reply-link before="| "]', 'firewood' );
-
-	echo '<div class="comment-meta">';
-
-	echo apply_atomic_shortcode( 'comment_meta', $comment_meta );
-
-	echo '</div><!-- / .comment-meta -->';
-}
 
 /**
  * Deregister WordPress jQuery, Google hosted jQuery is added manually with a local fallback.
