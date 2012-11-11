@@ -50,14 +50,6 @@ function firewood_theme_setup() {
 	add_action( 'after_setup_theme', 'firewood_body_class' );
 	add_action( 'after_setup_theme', 'firewood_entry_class' );
 
-	/* Header actions */
-	add_action( "{$prefix}_branding", 'hybrid_site_title' );
-	add_action( "{$prefix}_branding", 'hybrid_site_description' );
-
-	/* Add site title and description */
-	add_filter( "{$prefix}_site_title", 'firewood_filter_site_title' );
-	add_filter( "{$prefix}_site_description", 'firewood_filter_site_description' );
-
 	/* Add the title, byline, and entry meta */
 	add_action( "{$prefix}_open_entry", 'firewood_entry_header' );
 	add_action( "{$prefix}_close_entry", 'firewood_entry_meta' );
@@ -181,36 +173,6 @@ function firewood_entry_class( $class = '', $post_id = null ) {
 
 }
 
-
-/**
- * Filter hybrid site title
- *
- * @since 1.0
- */
-function firewood_filter_site_title() {
-
-	if ( $title = get_bloginfo( 'name' ) )
-
-		$title = '<h1 class="title site-title"><a href="' . home_url() . '" title="' . esc_attr( $title ) . '" rel="home">' . $title . '</a></h1>';
-
-	return $title;
-
-}
-
-/**
- * Filter hybrid site description
- *
- * @since 1.0
- */
-function firewood_filter_site_description() {
-
-	if ( $description = get_bloginfo( 'description' ) )
-
-		$description = '<h2 class="description site-description">' . $description . '</h2>';
-
-	return $description;
-
-}
 
 /**
  * Default entry header for posts.

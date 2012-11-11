@@ -36,17 +36,19 @@
 	<body class="<?php firewood_body_class(); ?>">
 
 	<?php do_atomic( 'before_header' ); // firewood_before_header ?>
-						
+
 		<div class="banner" role="banner">
-	
+
 			<?php do_atomic( 'open_header' ); // firewood_open_header ?>
 
 			<div class="branding">
 
-				<?php do_atomic( 'branding' ); // firewood_branding ?>
+				<h1 class="site-title"><a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+
+				<h2 class="site-description"><?php echo get_bloginfo( 'description' ); ?></h2>
 
 			</div><!-- / .branding -->
-				
+
 			<?php do_atomic( 'close_header' ); // firewood_close_header ?>
 
 		</div><!-- / .banner -->
