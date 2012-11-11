@@ -1,13 +1,13 @@
 <?php
 /**
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume 
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume
  * that you can use any other version of the GPL.
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * You should have received a copy of the GNU General Public License along with this program; if not, write 
+ * You should have received a copy of the GNU General Public License along with this program; if not, write
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
  * @package firewood
@@ -34,7 +34,7 @@ function firewood_theme_setup() {
 
 	/* Get action/filter hook prefix */
 	$prefix = hybrid_get_prefix();
-	
+
 	/* Add theme support for core framework features */
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 	add_theme_support( 'hybrid-core-shortcodes' );
@@ -49,15 +49,15 @@ function firewood_theme_setup() {
 	/* Firewood Functions */
 	add_action( 'after_setup_theme', 'firewood_body_class' );
 	add_action( 'after_setup_theme', 'firewood_entry_class' );
-	
+
 	/* Header actions */
 	add_action( "{$prefix}_branding", 'hybrid_site_title' );
 	add_action( "{$prefix}_branding", 'hybrid_site_description' );
-		
-	/* Add site title and description */	
+
+	/* Add site title and description */
 	add_filter( "{$prefix}_site_title", 'firewood_filter_site_title' );
 	add_filter( "{$prefix}_site_description", 'firewood_filter_site_description' );
-	
+
 	/* Add the title, byline, and entry meta */
 	add_action( "{$prefix}_open_entry", 'firewood_entry_header' );
 	add_action( "{$prefix}_close_entry", 'firewood_entry_meta' );
@@ -68,11 +68,11 @@ function firewood_theme_setup() {
 
 	/* Deregister WordPress jQuery on the frontend */
 	add_action( 'wp_enqueue_scripts', 'firewood_remove_jquery' );
-	
+
 	/* Add post navigation links */
 	add_action( "{$prefix}_close_content", 'firewood_loop_nav' );
-	
-	
+
+
 }
 
 
@@ -251,7 +251,7 @@ function firewood_entry_meta() {
 
 		$entry_meta = '<p>[entry-edit-link]</p>';
 
-	echo '<entry class="entry-meta">';
+	echo '<div class="entry-meta">';
 
 	echo apply_atomic_shortcode( 'entry_meta', $entry_meta );
 
@@ -265,17 +265,17 @@ function firewood_entry_meta() {
  * @since 1.0
  */
 function firewood_comment_meta() {
-	
+
 	$comment_meta = __( '[comment-author] [comment-published] [comment-permalink before="| "] [comment-edit-link before="| "] [comment-reply-link before="| "]', 'firewood' );
 
 	echo '<div class="comment-meta">';
-	
+
 	echo apply_atomic_shortcode( 'comment_meta', $comment_meta );
 
 	echo '</div><!-- / .comment-meta -->';
 }
 
-/** 
+/**
  * Deregister WordPress jQuery, Google hosted jQuery is added manually with a local fallback.
  *
  * @since 1.0

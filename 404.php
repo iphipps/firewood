@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * The 404 template
  *
@@ -12,7 +12,7 @@ get_header(); // Loads the header.php template. ?>
 
 	<?php do_atomic( 'before_content' ); // firewood_before_content ?>
 
-	<div class="hfeed <?php firewood_grid( 'content' ); ?>" role="main">
+	<div class="hfeed content" role="main">
 
 		<?php do_atomic( 'open_content' ); // firewood_open_content ?>
 
@@ -25,7 +25,7 @@ get_header(); // Loads the header.php template. ?>
 					<p><?php printf( __( 'You tried going to %1$s, and it doesn\'t exist.', 'firewood' ), '<code>' . home_url( esc_url( $_SERVER['REQUEST_URI'] ) ) . '</code>' ); ?></p>
 
 				</div><!-- / .entry-content -->
-				
+
 			</div><!-- / .404-error -->
 
 		<?php do_atomic( 'close_content' ); // firewood_close_content ?>
