@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Prototype WordPress Theme\n"
+"Project-Id-Version: Firewood WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-23 06:08-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Justin Tadlock <justin@justintadlock.com>\n"
-"Language-Team:  <justin@justintadlock.com>\n"
-"MIME-Version: 1.0\n"
+"Language-Team:  <mkelley@huntandgather.com>\n"
+"MIME-Version: 1.1\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: English\n"
@@ -14,142 +14,6 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__;esc_attr_e;esc_attr__;esc_html_e;esc_html__;_x;_n;_x:1,2c;_n:1,2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: 404.php:27
-msgid "Not Found"
-msgstr ""
-
-#: 404.php:32
-#, php-format
-msgid "You tried going to %1$s, and it doesn't exist. All is not lost! You can search for what you're looking for."
-msgstr ""
-
-#: archive.php:37
-#: home.php:38
-#: index.php:36
-msgid "By [entry-author] on [entry-published] [entry-edit-link before=\" | \"]"
-msgstr ""
-
-#: archive.php:41
-#: attachment.php:52
-#: home.php:42
-#: index.php:40
-msgid "Pages:"
-msgstr ""
-
-#: archive.php:44
-#: home.php:45
-#: index.php:43
-msgid "[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-terms before=\"| Tagged \"] [entry-comments-link before=\" | \"]"
-msgstr ""
-
-#: attachment.php:46
-#, php-format
-msgid "Download &quot;%1$s&quot;"
-msgstr ""
-
-#: attachment.php:51
-#: index.php:39
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: comment.php:30
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: comments.php:25
-msgid "No Responses"
-msgstr ""
-
-#: comments.php:25
-msgid "One Response"
-msgstr ""
-
-#: comments.php:25
-msgid "% Responses"
-msgstr ""
-
-#: comments.php:46
-#, php-format
-msgid "Comments are closed, but <a href=\"%1$s\" title=\"Trackback URL for this post\">trackbacks</a> and pingbacks are open."
-msgstr ""
-
-#: comments.php:52
-msgid "Comments are closed."
-msgstr ""
-
-#: header.php:70
-msgid "You are here:"
-msgstr ""
-
-#: loop-error.php:15
-msgid "Apologies, but no entries were found."
-msgstr ""
-
-#: loop-meta.php:89
-#, php-format
-msgid "You are browsing the search results for &quot;%1$s&quot;"
-msgstr ""
-
-#: loop-meta.php:98
-msgid "Archives by date"
-msgstr ""
-
-#: loop-meta.php:102
-msgid "You are browsing the site archives by date."
-msgstr ""
-
-#: loop-meta.php:126
-msgid "Archives"
-msgstr ""
-
-#: loop-meta.php:130
-msgid "You are browsing the site archives."
-msgstr ""
-
-#: loop-nav.php:16
-msgid "&larr; Return to entry"
-msgstr ""
-
-#: loop-nav.php:22
-msgid "Previous Entry: %link"
-msgstr ""
-
-#: loop-nav.php:23
-msgid "Next Entry: %link"
-msgstr ""
-
-#: loop-nav.php:28
-msgid "&larr; Previous"
-msgstr ""
-
-#: loop-nav.php:28
-msgid "Next &rarr;"
-msgstr ""
-
-#: page-template-archives.php:36
-msgid "Archives by category"
-msgstr ""
-
-#: page-template-archives.php:39
-msgid "RSS"
-msgstr ""
-
-#: page-template-archives.php:42
-msgid "Archives by month"
-msgstr ""
-
-#: post.php:41
-msgid "[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-terms taxonomy=\"post_tag\" before=\"| Tagged \"]"
-msgstr ""
-
-#: searchform.php:15
-msgid "Search this site..."
-msgstr ""
-
-#: searchform.php:16
-msgid "Search"
-msgstr ""
 
 #: library/admin/meta-box-post-seo.php:37
 msgid "SEO"
