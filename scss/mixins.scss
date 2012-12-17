@@ -1,0 +1,11 @@
+
+/* 
+ * Mixins
+ */
+
+
+// Font Size generates rems + px font-size attributes
+@mixin font-size( $sizeValue: 14 ){
+	font-size: $sizeValue + px;
+	font-size: ( $sizeValue / 10 ) + rem;
+	}

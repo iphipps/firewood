@@ -29,7 +29,11 @@
 
 		<?php wp_head(); // wp_head ?>
 
-		<script src="<?php echo get_stylesheet_directory_uri() . '/js/modernizr-2.5.3.min.js'?>"></script>
+		<script src="<?php echo get_stylesheet_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js'?>"></script>
+
+		<!--[if lt IE 9]>
+			<script src="<?php echo get_stylesheet_directory_uri() . '/js/vendor/html5shiv-3.6.2.min.js'?>"></script>
+		<![endif]-->
 
 	</head>
 
