@@ -11,7 +11,7 @@
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
  * @package firewood
- * @version 1.1
+ * @version 1.4
  * @author Hunt & Gather <dev@huntandgather.com>
  * @copyright Copyright (c) 2012, Hunt & Gather
  * @link http://huntandgather.com
@@ -20,7 +20,7 @@
 
 
 /* Load the core theme framework. */
-require_once( trailingslashit( TEMPLATEPATH ) . 'library/hybrid.php' );
+require_once( trailingslashit( TEMPLATEPATH ) . 'lib/hybrid.php' );
 $theme = new Hybrid();
 
 add_action( 'after_setup_theme', 'firewood_theme_setup' );
@@ -49,17 +49,6 @@ function firewood_theme_setup() {
 	/* Firewood Functions */
 	add_action( 'after_setup_theme', 'firewood_body_class' );
 	add_action( 'after_setup_theme', 'firewood_entry_class' );
-
-	/* Add the title, byline, and entry meta */
-	add_action( "{$prefix}_open_entry", 'firewood_entry_header' );
-	add_action( "{$prefix}_close_entry", 'firewood_entry_meta' );
-
-	/* Deregister WordPress jQuery on the frontend */
-	add_action( 'wp_enqueue_scripts', 'firewood_remove_jquery' );
-
-	/* Add post navigation links */
-	add_action( "{$prefix}_close_content", 'firewood_loop_nav' );
-
 
 }
 
@@ -167,76 +156,6 @@ function firewood_entry_class( $class = '', $post_id = null ) {
 
 	echo apply_atomic( 'entry_class', $class );
 
-}
-
-
-/**
- * Default entry header for posts.
- *
- * @since 1.0
- */
-function firewood_entry_header() {
-
-	$entry_byline = '';
-
-	if ( 'post' == get_post_type() )
-
-		$entry_byline = '<p class="byline">' . __( 'By [entry-author] on [entry-published] [entry-edit-link before=" | "]', 'firewood' ) . '</p>';
-
-	echo '<div class="entry-header">';
-
-	echo apply_atomic_shortcode( 'entry_title', '[entry-title]' );
-
-	echo apply_atomic_shortcode( 'byline', $entry_byline );
-
-	echo '</div><!-- / .entry-header -->';
-}
-
-/**
- * Displays the default entry metadata.
- *
- * @since 1.0
- */
-function firewood_entry_meta() {
-
-	$entry_meta = '';
-
-	if ( 'post' == get_post_type() )
-
-		$entry_meta = '<p>' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms taxonomy="post_tag" before="| Tagged "] [entry-comments-link before="| "]', 'firewood' ) . '</p>';
-
-	elseif ( is_page() && current_user_can( 'edit_page', get_the_ID() ) )
-
-		$entry_meta = '<p>[entry-edit-link]</p>';
-
-	echo '<div class="entry-meta">';
-
-	echo apply_atomic_shortcode( 'entry_meta', $entry_meta );
-
-	echo '</div><!-- / .entry-meta -->';
-
-}
-
-
-/**
- * Deregister WordPress jQuery, Google hosted jQuery is added manually with a local fallback.
- *
- * @since 1.0
- */
-function firewood_remove_jquery() {
-
-	wp_deregister_script('jquery');
-
-}
-
-/**
- * Loads the loop-nav.php template.
- *
- * @since 1.0
- */
-function firewood_loop_nav() {
-
-	get_template_part( 'loop', 'nav' );
 }
 
 ?>
